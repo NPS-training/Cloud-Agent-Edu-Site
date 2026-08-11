@@ -1178,44 +1178,45 @@ small {
 }
 .deployment-logos {
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
+  gap: 32px;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .deployment-logo {
-  width: 74px;
+  width: 112px;
   display: grid;
   justify-items: center;
   gap: 5px;
   text-align: center;
 }
 .logo-plate {
-  width: 36px;
-  height: 36px;
+  width: 112px;
+  height: 44px;
   display: grid;
   place-items: center;
 }
 .logo-plate.seal {
   background: transparent;
+  width: 44px;
 }
 .logo-plate img {
   width: auto;
-  max-width: 32px;
+  max-width: 100px;
   height: auto;
-  max-height: 32px;
+  max-height: 24px;
   object-fit: contain;
 }
 .logo-plate.seal img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 .logo-plate.dark-mark img {
-  max-width: 32px;
-  max-height: 18px;
-  transform: scale(1.25);
+  width: 100px;
+  max-height: 24px;
 }
 .logo-plate.nrl-mark img {
-  transform: scale(1.5);
+  width: 96px;
+  height: 24px;
 }
 [data-theme="dark"] .logo-plate.dark-mark img {
   filter: invert(1);
@@ -1228,10 +1229,15 @@ small {
   color: var(--ink);
   font-size: 12px;
   line-height: 1.2;
+  min-height: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 .deployment-primes {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 11px;
+  line-height: 1.4;
   margin-bottom: 28px;
 }
 .compliance-isolation {
@@ -1281,7 +1287,7 @@ small {
     grid-template-columns: repeat(2, 1fr);
   }
   .deployment-logo {
-    width: 68px;
+    width: 92px;
   }
 }
 @media (max-width: 560px) {
@@ -1307,10 +1313,19 @@ small {
   }
   .deployment-logos {
     justify-content: flex-start;
-    gap: 12px 8px;
+    gap: 18px 20px;
   }
   .deployment-group-caption {
     margin-bottom: 6px;
+  }
+  .logo-plate {
+    width: 92px;
+  }
+  .logo-plate.seal {
+    width: 44px;
+  }
+  .deployment-name {
+    min-height: 34px;
   }
   .deployment-name {
     font-size: 11px;
