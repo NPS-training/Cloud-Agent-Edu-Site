@@ -2,19 +2,17 @@ export const SESSION_URL = "https://app.devin.ai/sessions/32f215a9b63c498c8d9ea0
 export const BUILD_COST = "a few cents of compute";
 export type NavItem = { number: string; label: string; id: string };
 export const navItems: NavItem[] = [
-  { number: "01", label: "What it is", id: "cold-open" },
-  { number: "02", label: "Evolution", id: "evolution" },
-  { number: "03", label: "Bottleneck", id: "bottleneck" },
-  { number: "04", label: "Machine", id: "execution" },
-  { number: "05", label: "Fleet", id: "fleet" },
-  { number: "06", label: "Patterns", id: "patterns" },
-  { number: "07", label: "Context", id: "context" },
-  { number: "08", label: "Models", id: "models" },
-  { number: "09", label: "Regulated", id: "regulated" },
-  { number: "10", label: "Proof", id: "proof" },
-  { number: "11", label: "Start", id: "start" },
-  { number: "12", label: "Why Cognition", id: "why" },
-  { number: "13", label: "How this was made", id: "meta" },
+  { number: "01", label: "What", id: "cold-open" },
+  { number: "02", label: "Machine", id: "execution" },
+  { number: "03", label: "Fleet", id: "fleet" },
+  { number: "04", label: "Patterns", id: "patterns" },
+  { number: "05", label: "Context", id: "context" },
+  { number: "06", label: "Models", id: "models" },
+  { number: "07", label: "Regulated", id: "regulated" },
+  { number: "08", label: "Proof", id: "proof" },
+  { number: "09", label: "Start", id: "start" },
+  { number: "10", label: "Why Cognition", id: "why" },
+  { number: "11", label: "Meta", id: "meta" },
 ];
 export type ContrastCard = {
   title: string;
@@ -131,7 +129,7 @@ export const evolutionLevels: EvolutionLevel[] = [
     trigger: "Intent",
     scope: "Picks the work and the approach",
     iteration: "Self-correcting over time",
-    era: "—",
+    era: "-",
     narration: "Not here yet. Best guess: ~2028, depending on how you define it.",
   },
 ];
@@ -140,9 +138,9 @@ export const bottleneck = {
   source: "Microsoft Research, 2024; Software, 2023",
   steps: ["Understanding & Planning", "Writing Code", "Review", "Testing & QA", "Maintenance"],
   paragraphs: [
-    "For thirty years the process was designed around one assumption: engineering time is the scarcest resource in the building. That's why we spent so much of it upstream — grooming, estimating, specing a ticket down to the pixel — so that when someone finally put hands on keyboard, they never had to make a decision.",
-    'Take something small and real: "add CSV export to the reports page." In the old model that\'s a design review, a spec on which columns and what timezone the timestamps use, a sprint slot, and a week of round-trips — all to protect a few hours of typing. Today the person who wants the export can put a working version in front of a user the same afternoon, and the engineer spends their time on the part that actually needs them: is this a synchronous download or a background job, what happens at ten million rows, who is allowed to export what.',
-    "Typing is no longer the constraint. Planning, review, testing, and maintenance are — and those are the four stages a local assistant never touches.",
+    "For thirty years the process was designed around one assumption: engineering time is the scarcest resource in the building. That's why so much work happened upstream. Teams groomed, estimated, and specified tickets in detail so the engineer could type without stopping to make a decision.",
+    'Take something small and real: "add CSV export to the reports page." In the old model, that meant a design review, a decision about columns and timestamp time zones, a sprint slot, and a week of round-trips. The goal was to protect a few hours of typing. Today the person who wants the export can put a working version in front of a user the same afternoon. The engineer can focus on the decisions that need expertise: whether the download is synchronous or a background job, what happens at ten million rows, and who is allowed to export what.',
+    "Typing is no longer the constraint. Planning, review, testing, and maintenance now take the time.",
   ],
   kicker:
     "The skill that compounds now is system-level judgment, not keystrokes. You can only type so much faster.",
@@ -150,23 +148,23 @@ export const bottleneck = {
 export const capabilities = [
   {
     title: "A dedicated execution environment per task",
-    body: "its own VM, its own filesystem, no contention with your laptop or with other agents.",
+    body: "It has its own VM and filesystem, with no contention with your laptop or other agents.",
   },
   {
     title: "State that persists across steps and time",
-    body: "a long-running task can install, build, fail, fix, and come back to it hours later.",
+    body: "A long-running task can install, build, fail, fix, and come back to it hours later.",
   },
   {
-    title: "Real commands in a real Linux environment",
-    body: "install packages, run migrations, hit a database, drive a browser. Linux by default because it's cheaper and faster; Windows, macOS/iOS, and Android when the target needs it.",
+    title: "Real commands in Linux or macOS environments",
+    body: "It can install packages, run migrations, hit a database, and drive a browser. Linux is the default, with macOS when the target needs it. iOS and Android emulators support mobile verification.",
   },
   {
     title: "Observes results and adapts",
-    body: "it runs the thing, reads the failure, and tries again.",
+    body: "It runs the thing, reads the failure, and tries again.",
   },
 ];
 export const executionClose =
-  "This is the difference between a PR that is a best guess and a PR that has been executed. An agent with a machine can open the browser, click through the flow, watch the end-to-end test fail against a real environment, fix it, and run it again — as many times as it takes — before a human ever looks at it.";
+  "A PR can be tested before a human reviews it. An agent with a machine can open the browser, click through the flow, watch the end-to-end test fail against a real environment, fix it, and run it again as many times as needed.";
 export const localCloud = {
   local: {
     label: "CONSTRAINED · Local Agent",
@@ -179,24 +177,24 @@ export const localCloud = {
       "Bottlenecked by your machine's CPU & RAM",
       "Your computer must be on and awake",
       "Limited event-driven and parallel capacity",
-      "Context you build is stuck on your machine — a few checked-in markdown files is not knowledge sharing",
+      "Context you build is stuck on your machine. A few checked-in markdown files do not create knowledge sharing.",
       "Accelerates one individual, capped by that individual's attention",
     ],
   },
   cloud: {
     label: "SCALABLE · Cloud Agents",
-    events: ["⚡ PR opened", "⚡ Slack message", "⚡ Cron job"],
+    events: ["PR opened", "Slack message", "Cron job"],
     bullets: [
       "Each agent gets its own dedicated VM",
       "Scale to effectively unlimited parallel agents on demand",
-      "Event-driven — triggered automatically, 24/7",
+      "Event-driven, triggered automatically 24/7",
       "Secure, isolated environments for compliance-sensitive work",
       "Knowledge is shared across the team by default",
       "Full Linux and Windows environments, so agents can close the verification loop",
     ],
   },
   orchestration:
-    "Parallelism isn't just \"fifty copies of the same prompt.\" A parent agent plans the work, splits it into tranches, deconflicts them so two agents don't collide in the same files, hands each piece to a sub-agent, and reviews what comes back. Architectural decisions stay with the parent; the narrow, well-defined pieces go to cheaper, faster models. That's where both the speed and the cost savings come from.",
+    "A parent agent plans the work, splits it into tranches, prevents file conflicts, assigns each piece to a sub-agent, and reviews the results. Architectural decisions stay with the parent. Narrow, well-defined pieces go to cheaper, faster models. This is how the fleet gains speed and lowers cost.",
 };
 export type Pattern = { label: string; title: string; description: string; examples: string };
 export const patterns: Pattern[] = [
@@ -212,7 +210,7 @@ export const patterns: Pattern[] = [
     label: "PATTERN 02 · ALWAYS-ON",
     title: "Event-driven",
     description:
-      "Agents that fire automatically off PRs, alerts, tickets, or schedules — first responders that don't sleep.",
+      "Agents that fire automatically from PRs, alerts, tickets, or schedules. They keep working outside office hours.",
     examples:
       "Incident response · Auto-triage of bugs & feature requests · Automated PR review · CI failure analysis & fixes · On-call automation",
   },
@@ -225,27 +223,37 @@ export const patterns: Pattern[] = [
       "End-to-end delegation of easy tasks · Cloud handoff for implementation & testing · Addressing PR comments · Fixing CI failures",
   },
 ];
+export const handoff = {
+  title: "Hand off the machine work",
+  body: "The Devin CLI can send a task to a cloud session with its built-in /handoff command. Claude Code, Codex, Cursor, and other agents can use the open-source Devin Handoff plugin. It packages the repo, branch, uncommitted diff, and current context so Devin can continue on its own VM after you close your laptop.",
+  triggers: [
+    "Dev servers and Docker builds",
+    "Browser, OAuth, and end-to-end tests",
+    "CI debugging and long migrations",
+    "Parallel work while you keep coding locally",
+  ],
+};
 export const securityBacklog = [
-  "Static and dynamic scanners add dozens of low-priority findings a day. Each one is individually not worth a human's afternoon, so they're triaged as \"later\" and never done — and the backlog compounds.",
-  "That backlog used to be tolerable because chaining low-severity findings into a real exploit took dedicated, nation-state-grade effort, and most systems were never worth that effort. That assumption no longer holds: the cost of chaining exploits has collapsed. Meanwhile the human economics haven't changed — an engineer opening their laptop after hours costs far more than the dollar or so of compute it takes an agent to remediate the finding and open the PR.",
+  'Static and dynamic scanners add dozens of low-priority findings a day. Each one is too small to justify an engineer\'s afternoon, so teams mark it "later" and the backlog grows.',
+  "That backlog used to be tolerable because chaining low-severity findings into a real exploit took dedicated, nation-state-grade effort, and most systems were never worth that effort. That assumption no longer holds. The cost of chaining exploits has collapsed. The human economics have not changed. An engineer opening a laptop after hours costs far more than the dollar or so of compute an agent needs to remediate a finding and open the PR.",
   "The pattern: an agent runs on a schedule, ingests scanner output over MCP, triages it, opens one PR per finding, tags the code owner, and fixes its own red CI. Humans review; humans are not the first responders.",
 ];
 export const context = {
   opening:
-    "The model is smart. It still can't read your mind — and neither could a new senior hire. If I ask you to \"add CSV export,\" you'll build a CSV export; it just won't be the one I had in my head, because the requirements were never written down anywhere. They're in a Confluence page, a Slack thread, a Teams channel, a meeting last Tuesday, and the scanner config nobody owns. Scale that ambiguity up by four orders of magnitude and you have most failed AI-engineering pilots.",
+    'The model is smart, but it cannot read your mind. A new senior hire cannot do that either. If I ask you to "add CSV export," you\'ll build a CSV export, but it may not match what I had in mind because the requirements were never written down. They are in a Confluence page, a Slack thread, a Teams channel, a meeting last Tuesday, and the scanner config nobody owns. Multiply that ambiguity by four orders of magnitude and you have most failed AI-engineering pilots.',
   pillars: [
     {
       title: "Devin gets better with every PR",
-      body: "captures feedback, learns your codebase over time, and bridges the pilot-to-production gap.",
+      body: "It captures feedback, learns your codebase over time, and bridges the pilot-to-production gap.",
       source: "MIT, 2025",
     },
     {
       title: "Knowledge that builds, not resets",
-      body: "decisions are codified as knowledge items and applied to future tasks.",
+      body: "Decisions are codified as knowledge items and applied to future tasks.",
     },
     {
       title: "Context-aware application",
-      body: "context is retained across repos and workflows, so the right knowledge item is auto-applied to the right task.",
+      body: "Context is retained across repos and workflows, so the right knowledge item is auto-applied to the right task.",
     },
   ],
   sources: [
@@ -257,8 +265,8 @@ export const context = {
     "the hundreds of tools that already run your SDLC",
   ],
   compound:
-    "A local agent's context dies on the laptop that built it. In a shared cloud environment, playbooks, skills, knowledge items and automations belong to the organization. Every engineer's corrections make the next engineer's session better.\n\nAnd it compounds faster than a human's would. A new hire is useful at month one and good at year one. An agent working across your whole team is doing ten times the volume of work in that same window — and every one of those runs is a chance to learn the codebase.",
-  ask: "Point it at a repo with millions of lines across thousands of files and it produces the architecture diagram and the walkthrough that would take a human months to reconstruct — then answers questions about it. That capability alone changes what onboarding, code review, and due diligence cost.",
+    "A local agent's context dies on the laptop that built it. In a shared cloud environment, playbooks, skills, knowledge items, and automations belong to the organization. Every engineer's correction improves the next engineer's session.\n\nIt compounds faster than a human can. A new hire is useful at month one and good at year one. An agent working across your whole team handles ten times the volume of work in that same window. Every run is a chance to learn the codebase.",
+  ask: "Point it at a repo with millions of lines across thousands of files. It produces the architecture diagram and walkthrough that would take a human months to reconstruct, then answers questions about them. That changes the cost of onboarding, code review, and due diligence.",
 };
 export const models = {
   sources: [
@@ -277,7 +285,7 @@ export const models = {
   fusion:
     "Devin Fusion: a multi-model harness with ~60% better cost-efficiency while maintaining frontier performance.",
   saturation:
-    "Some tasks need the smartest model that exists. Most don't. Writing test coverage for a well-specified module is saturated — the best model of 2030 will produce the same result as a cheap one today, two orders of magnitude cheaper and much faster. Architecture and orchestration are where frontier intelligence earns its price.",
+    "Some tasks need the smartest model that exists. Most don't. Writing test coverage for a well-specified module is saturated. The best model of 2030 will produce the same result as a cheap one today, two orders of magnitude cheaper and much faster. Architecture and orchestration are where frontier intelligence earns its price.",
   lockIn:
     "Your agent platform shouldn't have a commercial incentive to route you to one lab's models. Cognition trains its own models and ingests the best of everyone else's.",
   kicker:
@@ -285,10 +293,28 @@ export const models = {
 };
 export const regulated = {
   badges: ["FedRAMP High", "IL4 / IL5", "CUI", "ITAR"],
+  governmentOrganizations: [
+    { name: "NAVAIR", logo: "/logos/navair.png", variant: "seal" },
+    { name: "NRL", logo: "/logos/nrl.svg", variant: "dark-mark nrl-mark" },
+    { name: "NASA", logo: "/logos/nasa.svg", variant: "seal" },
+    {
+      name: "Treasury",
+      logo: "/logos/treasury.svg",
+      variant: "seal",
+    },
+    {
+      name: "Social Security Administration",
+      logo: "/logos/ssa.svg",
+      variant: "seal",
+    },
+  ],
+  commercialOrganizations: [
+    { name: "Palantir", logo: "/logos/palantir.svg", variant: "dark-mark" },
+    { name: "Anduril", logo: "/logos/anduril.svg", variant: "dark-mark" },
+  ],
   caveat:
-    "ATOs are always environment-specific — this covers the platform's authorizations, not a blanket approval for your enclave.",
-  deployed:
-    "Deployed with: NAVAIR · NRL · NASA · Treasury · Social Security Administration · five of the top seven U.S. defense primes.",
+    "ATOs are always environment-specific. This covers the platform's authorizations, not a blanket approval for your enclave.",
+  primes: "Also deployed with five of the top seven U.S. defense primes.",
   isolation:
     "Every session runs in its own isolated environment, which is what makes parallel work safe to run on sensitive code.",
 };
@@ -304,64 +330,85 @@ export const proof = {
     { month: "Apr 2026", value: 10 },
   ],
   transcriptColor:
-    "Much of that volume is non-trivial quality-of-life work opened by people who aren't product engineers — a screenshot and a vague description in Slack becomes a ticket, a PR, and a tagged code owner, with the agent asking clarifying questions along the way.",
+    "Much of that volume is non-trivial quality-of-life work opened by people who aren't product engineers. A screenshot and a vague description in Slack becomes a ticket, a PR, and a tagged code owner, with the agent asking clarifying questions along the way.",
   hardware:
-    "A single engineer at a defense contractor used Devin to build a GLONASS emulator on FPGAs for weapons-system testing. Devin wrote SpinalHDL, generated Tcl scripts, synthesized the design, flashed the hardware, ran validation hooks, and debugged against a physical dev kit — including unattended overnight debug loops, which is exactly where the slow iteration normally lives. A working simulator came together in about 12 hours against an estimated 12–18 months of manual work.",
+    "A single engineer at a defense contractor used Devin to build a GLONASS emulator on FPGAs for weapons-system testing. Devin wrote SpinalHDL, generated Tcl scripts, synthesized the design, flashed the hardware, ran validation hooks, and debugged against a physical dev kit. The work included unattended overnight debug loops, which is exactly where the slow iteration normally lives. A working simulator came together in about 12 hours against an estimated 12–18 months of manual work.",
 };
 export const caseStudies = [
   {
     category: "Code migration",
     name: "Mercedes-Benz",
-    body: "8 days to complete 8 months of COBOL work; 200,000+ lines of legacy code analyzed and migrated in a 4-week pilot.",
+    metric: "8 days",
+    body: "to complete 8 months of COBOL work; 200,000+ lines of legacy code analyzed and migrated in a 4-week pilot.",
   },
   {
     category: "Data engineering",
     name: "Nubank",
-    body: "20x cost savings on ETL migration; 6M+ lines refactored. Planned for 1,000+ engineers over 18 months, completed in weeks.",
+    metric: "20x",
+    body: "cost savings on ETL migration; 6M+ lines refactored. Planned for 1,000+ engineers over 18 months, completed in weeks.",
   },
   {
     category: "Vulnerability & bug triage",
     name: "Itaú",
-    body: "70% of security vulnerabilities automatically remediated, across thousands of repos.",
+    metric: "70%",
+    body: "of security vulnerabilities automatically remediated, across thousands of repos.",
   },
   {
     category: "QA & test generation",
     name: "Rivian–Volkswagen Technologies",
-    body: "10x increase in test-generation velocity; from 1–2 tests per engineer-day to 10–15.",
+    metric: "10x",
+    body: "increase in test-generation velocity; from 1–2 tests per engineer-day to 10–15.",
   },
   {
     category: "Documentation",
     name: "Evinova",
-    body: "8x faster regulatory documentation; specs that took 35–40 hours of coordination now generate in 5–10 minutes.",
+    metric: "8x",
+    body: "faster regulatory documentation; specs that took 35–40 hours of coordination now generate in 5–10 minutes.",
   },
   {
     category: "Product development",
     name: "Gumroad",
-    body: "#1 code contributor in 5 of 7 most active repos; 1,500+ PRs merged at an 85% merge rate, ~10 per day.",
+    metric: "#1",
+    body: "code contributor in 5 of 7 most active repos; 1,500+ PRs merged at an 85% merge rate, ~10 per day.",
   },
   {
     category: "Technical-debt burndown",
     name: "Ramp",
-    body: "10k+ hours saved each month on rote tasks.",
+    metric: "10k+",
+    body: "hours saved each month on rote tasks.",
   },
   {
     category: "Application modernization",
     name: "AngelList",
-    body: "5.2x faster Redshift-to-Snowflake migration; 1 data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
+    metric: "5.2x",
+    body: "faster Redshift-to-Snowflake migration; 1 data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
   },
 ];
 export const gettingStarted = [
   {
     tier: "Easy",
-    body: 'Take a first stab at new work: "@Devin, what would it take to build X?" · Chores, repetitive tasks and technical grunt work: "Update all the relevant documentation."',
+    heading: "Start with a question",
+    examples: [
+      '"@Devin, what would it take to build X?"',
+      '"Update all the relevant documentation."',
+    ],
   },
   {
     tier: "Intermediate",
-    body: 'Co-develop PRDs and plans of attack: "Plan a phased migration from Angular to React 18." · Delegate to multiple agents at once: parallel sessions, one per UI component.',
+    heading: "Plan and parallelize",
+    examples: [
+      '"Plan a phased migration from Angular to React 18."',
+      "Parallel sessions, one per UI component.",
+    ],
   },
   {
     tier: "Advanced",
-    body: "Automate end-to-end workflows (dependency upgrades, feature-flag removal) · Intelligent code review wired into CI/CD · Incident and alert triage via the API.",
+    heading: "Automate the loop",
+    examples: [
+      "Dependency upgrades and feature-flag removal",
+      "Intelligent code review wired into CI/CD",
+      "Incident and alert triage via the API",
+    ],
   },
 ];
 export const firstWeek =
@@ -380,19 +427,19 @@ export const whyCognition = [
   },
   {
     title: "Execution architecture for agent fleets",
-    body: "dedicated environments, persistent state, thousands of concurrent agents at a fraction of VM cost. Purpose-built for cloud from day one.",
+    body: "It provides dedicated environments, persistent state, and thousands of concurrent agents at a fraction of VM cost. It was purpose-built for cloud from day one.",
   },
   {
     title: "Model-agnostic, no vendor lock-in",
-    body: "auto-routes across Anthropic, OpenAI, Google and more, optimizing for accuracy, latency, and cost.",
+    body: "It auto-routes across Anthropic, OpenAI, Google, and more, optimizing for accuracy, latency, and cost.",
   },
   {
     title: "Dedicated FDE partnership to drive adoption",
-    body: "forward-deployed engineers own technical success end-to-end; the AI DevEx team embeds onsite. Every completed program: 2–4x adoption.",
+    body: "Forward-deployed engineers own technical success end-to-end, and the AI DevEx team embeds onsite. Every completed program delivers 2–4x adoption.",
   },
 ];
 export const metaCopy = [
   "This page wasn't designed. It was delegated.",
-  "The inputs were a 14-slide deck that doesn't convert cleanly to anything, and a raw, unedited transcript of a 30-minute conversation about that deck — including the parts where we told it which examples were bad and what not to publish. One prompt, one session, one machine: it read the slides and the speaker notes, pulled the numbers and the artwork, followed the redaction rules, restructured the argument, wrote the copy, built the site, tested it in a browser, and deployed it.",
+  "The inputs were a 14-slide deck that doesn't convert cleanly to anything and a raw, unedited transcript of a 30-minute conversation about that deck. The transcript included the parts where we identified bad examples and content to omit. One prompt, one session, one machine: it read the slides and speaker notes, pulled the numbers and artwork, followed the redaction rules, restructured the argument, wrote the copy, built the site, tested it in a browser, and deployed it.",
   "That's the whole pitch, and you're looking at it.",
 ];

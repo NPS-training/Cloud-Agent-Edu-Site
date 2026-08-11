@@ -65,8 +65,8 @@ export function Evolution() {
           <span>MULTIPLYING TEAMS</span>
         </div>
         <div className="callout">
-          Where most teams are stuck: L2. The jump that matters is L2 → L3, and it is not a model
-          upgrade — it&apos;s an infrastructure change.
+          Where most teams are stuck: L2. The jump that matters is L2 → L3. The change is in the
+          infrastructure, not the model.
         </div>
       </div>
     </Section>

@@ -12,12 +12,17 @@ export function GettingStarted() {
         {gettingStarted.map((item) => (
           <article className="card" key={item.tier}>
             <div className="eyebrow">{item.tier}</div>
-            <p>{item.body}</p>
+            <h3>{item.heading}</h3>
+            <ul className="chip-list tier-examples">
+              {item.examples.map((example) => (
+                <li key={example}>{example}</li>
+              ))}
+            </ul>
           </article>
         ))}
       </div>
       <div className="checklist">
-        <b>First week</b>
+        <h3>First week</h3>
         <ul className="chip-list">
           {firstWeekItems.map((item) => (
             <li key={item}>{item}</li>
@@ -25,7 +30,7 @@ export function GettingStarted() {
         </ul>
       </div>
       <a className="learn-cta" href="https://learndevin.com/" target="_blank" rel="noopener">
-        Learn Devin — hands-on guides and courses ↗
+        Learn Devin: hands-on guides and courses ↗
       </a>
     </Section>
   );

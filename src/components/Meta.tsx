@@ -9,7 +9,7 @@ export function Meta() {
         <h2 className="title">{metaCopy[0]}</h2>
         <p className="lede">{metaCopy[1]}</p>
         <p className="meta-kicker">{metaCopy[2]}</p>
-        <a href={SESSION_URL} className="btn primary">
+        <a href={SESSION_URL} className="btn primary" target="_blank" rel="noopener">
           Open the session ↗
         </a>
         <p className="muted">Build cost: {BUILD_COST}</p>

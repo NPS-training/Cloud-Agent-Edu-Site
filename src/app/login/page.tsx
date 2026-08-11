@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import Image from "next/image";
 export default async function Login({
   searchParams,
 }: {
@@ -18,6 +19,13 @@ export default async function Login({
         <p>This briefing is access-controlled. Enter the passphrase to continue.</p>
         <form action="/api/auth" method="post">
           <label htmlFor="password">Passphrase</label>
+          <Image
+            src="/nps-seal.svg"
+            alt="Naval Postgraduate School seal"
+            className="login-seal"
+            width={58}
+            height={58}
+          />
           <input id="password" name="password" type="password" autoFocus required />
           <button className="btn primary" type="submit">
             Enter <span>↗</span>

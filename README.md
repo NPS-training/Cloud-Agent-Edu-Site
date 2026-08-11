@@ -18,7 +18,7 @@ npm run typecheck
 npm run build
 ```
 
-Import the repository into Vercel and configure `SITE_PASSWORD` and `COOKIE_SECRET` in Project Settings → Environment Variables. The app is a static-friendly Next.js 15 App Router site with an Edge-compatible middleware gate.
+Import the repository into Vercel and configure both `SITE_PASSWORD` and `COOKIE_SECRET` as Vercel environment variables for **Production** and **Preview** deployments. The app-level gate is intentional because Vercel's built-in password protection is a paid-plan feature. The app is a static-friendly Next.js 15 App Router site with an Edge-compatible middleware gate.
 
 ## Content
 

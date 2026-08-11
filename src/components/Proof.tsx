@@ -1,4 +1,5 @@
 "use client";
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { caseStudies, proof } from "@/content/site";
 import { Section } from "./Section";
@@ -27,7 +28,8 @@ export function Proof() {
               <motion.div
                 className="bar"
                 initial={{ height: 0 }}
-                whileInView={{ height: `${point.value * 25}px` }}
+                whileInView={{ height: `${point.value * 10}%` }}
+                style={{ "--bar-height": `${point.value * 10}%` } as CSSProperties}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 key={point.month}
@@ -49,7 +51,9 @@ export function Proof() {
           <article className="case" key={study.name}>
             <span className="eyebrow">{study.category}</span>
             <h3>{study.name}</h3>
-            <p>{study.body}</p>
+            <p>
+              <strong className="case-metric">{study.metric}</strong> {study.body}
+            </p>
           </article>
         ))}
       </div>

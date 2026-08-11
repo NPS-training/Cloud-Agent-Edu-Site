@@ -10,9 +10,8 @@ export function Hero() {
             <span>AI Engineering</span>
           </h1>
           <p className="lede">
-            Your coding assistant lives in your editor. A cloud agent lives on its own machine —
-            with your repo, your tools, your CI, and no human waiting on it. That difference is the
-            whole story.
+            Your coding assistant lives in your editor. A cloud agent runs on its own machine with
+            your repo, your tools, and your CI. No human has to wait for it. That is the difference.
           </p>
           <div className="actions">
             <a className="btn primary" href="#cold-open">
