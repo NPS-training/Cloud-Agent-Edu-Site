@@ -12,7 +12,8 @@ export const navItems: NavItem[] = [
   { number: "08", label: "Proof", id: "proof" },
   { number: "09", label: "Programs", id: "programs" },
   { number: "10", label: "Start", id: "start" },
-  { number: "11", label: "Why Cognition", id: "why" },
+  { number: "11", label: "Cognition", id: "why" },
+  { number: "12", label: "Meta", id: "meta" },
 ];
 export type ContrastCard = {
   title: string;

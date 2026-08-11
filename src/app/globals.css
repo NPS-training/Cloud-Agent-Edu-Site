@@ -695,6 +695,7 @@ blockquote {
 }
 .sources {
   grid-area: sources;
+  justify-self: end;
 }
 .dest {
   grid-area: destinations;
