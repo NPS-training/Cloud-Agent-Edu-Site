@@ -1178,7 +1178,7 @@ small {
 }
 .deployment-logos {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
@@ -1191,13 +1191,13 @@ small {
 }
 .logo-plate {
   width: 112px;
-  height: 44px;
+  height: 84px;
   display: grid;
   place-items: center;
 }
 .logo-plate.seal {
   background: transparent;
-  width: 44px;
+  width: 84px;
 }
 .logo-plate img {
   width: auto;
@@ -1207,8 +1207,8 @@ small {
   object-fit: contain;
 }
 .logo-plate.seal img {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 }
 .logo-plate.dark-mark img {
   width: 100px;
@@ -1227,9 +1227,9 @@ small {
 }
 .deployment-name {
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.2;
-  min-height: 30px;
+  min-height: 34px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1320,11 +1320,13 @@ small {
   }
   .logo-plate {
     width: 92px;
+    height: 84px;
   }
   .logo-plate.seal {
-    width: 44px;
+    width: 84px;
   }
   .deployment-name {
+    font-size: 13px;
     min-height: 34px;
   }
   .deployment-name {

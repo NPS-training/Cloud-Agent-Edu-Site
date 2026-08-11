@@ -32,7 +32,6 @@ export function Regulated() {
             </div>
           </div>
           <div className="deployment-group">
-            <span className="deployment-group-caption">Named commercial customers</span>
             <div className="deployment-logos">
               {regulated.commercialOrganizations.map((organization) => (
                 <div className="deployment-logo" key={organization.name}>
