@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { ColdOpen } from "@/components/ColdOpen";
@@ -49,13 +50,17 @@ export default function Home() {
       <footer>
         <div className="wrap footer-inner">
           <span className="brand">
+            <Image src="/nps-seal.svg" alt="NPS seal" className="nps-seal" width={28} height={28} />
             Cognition <span>·</span> Devin
           </span>
           <a className="footer-learn" href="https://learndevin.com/" target="_blank" rel="noopener">
             Learn Devin ↗
           </a>
           <ThemeToggle />
-          <span className="muted">Built for the NPS session, August 2026.</span>
+          <span className="fine-print">
+            Not endorsed by or affiliated with the Naval Postgraduate School, the U.S. Navy, or the
+            Department of Defense.
+          </span>
         </div>
       </footer>
     </>

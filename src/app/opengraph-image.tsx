@@ -18,7 +18,7 @@ export default function OpenGraphImage() {
         fontFamily: "sans-serif",
       }}
     >
-      <div style={{ color: "#5B8DEF", fontSize: 24, letterSpacing: 4, textTransform: "uppercase" }}>
+      <div style={{ color: "#6F9FE8", fontSize: 24, letterSpacing: 4, textTransform: "uppercase" }}>
         A briefing for engineers · 2026
       </div>
       <div style={{ display: "flex", flexDirection: "column", marginTop: 28 }}>
@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
             fontWeight: 700,
             lineHeight: 1,
             letterSpacing: -5,
-            color: "#5B8DEF",
+            color: "#6F9FE8",
           }}
         >
           AI Engineering

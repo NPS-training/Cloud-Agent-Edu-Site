@@ -31,8 +31,8 @@ export function Patterns() {
       <div className="callout">
         <b>Humans cannot be in the loop on everything. Pick the loops that need judgment.</b>
         <br />
-        Devin Review is a second agent that reviews the first one&apos;s work — a non-adversarial
-        adversary. If CI is red, the human shouldn&apos;t be the one fixing it.
+        Devin Review is a second agent that reviews the first one&apos;s work. It provides a
+        non-adversarial review. If CI is red, the human shouldn&apos;t be the one fixing it.
       </div>
     </Section>
   );

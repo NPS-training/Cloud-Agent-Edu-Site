@@ -52,7 +52,7 @@ export function LocalVsCloud() {
       id="fleet"
       number="05"
       kicker="The fleet"
-      title="Local agents hit a ceiling. Cloud agents turn the ceiling into a floor."
+      title="A local agent has one machine. A cloud fleet can add capacity."
     >
       <div className="local-cloud">
         <article className="card local">
@@ -88,7 +88,7 @@ export function LocalVsCloud() {
       </div>
       <div className="orchestration">
         <div className="eyebrow">One agent that runs the others</div>
-        <h3>Parallelism isn&apos;t just “fifty copies of the same prompt.”</h3>
+        <h3>One parent agent can coordinate a fleet.</h3>
         <p>{localCloud.orchestration}</p>
       </div>
     </Section>

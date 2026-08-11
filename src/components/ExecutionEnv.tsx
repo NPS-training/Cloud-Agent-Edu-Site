@@ -18,7 +18,7 @@ export function ExecutionEnv() {
               <li key={capability.title}>
                 <b>0{index + 1}</b>
                 <span>
-                  <strong>{capability.title}</strong> — {capability.body}
+                  <strong>{capability.title}</strong>. {capability.body}
                 </span>
               </li>
             ))}

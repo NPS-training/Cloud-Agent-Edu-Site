@@ -6,7 +6,7 @@ export function ColdOpen() {
       id="cold-open"
       number="01"
       kicker="The shift"
-      title="A cloud agent is not a better autocomplete. It is a different place to work."
+      title="A cloud agent gives you a machine to delegate work to."
     >
       <div className="grid contrast">
         {contrastCards.map((card, index) => (
@@ -34,8 +34,8 @@ export function ColdOpen() {
         ))}
       </div>
       <p className="closing-line">
-        A cloud agent is not a faster way to type. It&apos;s a teammate you delegate to — one that
-        can be running fifty tasks while your laptop is closed.
+        A cloud agent gives you a teammate with a machine. It can run fifty tasks while your laptop
+        is closed.
       </p>
     </Section>
   );

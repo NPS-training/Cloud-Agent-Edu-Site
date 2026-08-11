@@ -30,7 +30,7 @@ export function GettingStarted() {
         </ul>
       </div>
       <a className="learn-cta" href="https://learndevin.com/" target="_blank" rel="noopener">
-        Learn Devin — hands-on guides and courses ↗
+        Learn Devin: hands-on guides and courses ↗
       </a>
     </Section>
   );

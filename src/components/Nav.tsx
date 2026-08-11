@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { navItems } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
 export function Nav() {
@@ -19,12 +20,13 @@ export function Nav() {
     <header>
       <div className="wrap header-inner">
         <a className="brand" href="#top">
+          <Image src="/nps-seal.svg" alt="NPS seal" className="nps-seal" width={28} height={28} />
           Cognition <span>·</span> Devin
         </a>
         <nav>
           {navItems.map((item) => (
             <a className={active === item.id ? "active" : ""} href={`#${item.id}`} key={item.id}>
-              {item.number} {item.label}
+              {item.label}
             </a>
           ))}
         </nav>

@@ -4,7 +4,7 @@
   --ink: #0b0d12;
   --muted: #626875;
   --line: #dfe2e8;
-  --accent: #4b5bf5;
+  --accent: #2457a6;
   --soft: #eef0ff;
   --orange: #e4572e;
 }
@@ -13,7 +13,7 @@
   --ink: #f5f7ff;
   --muted: #a5aec2;
   --line: #29324a;
-  --accent: #5b8def;
+  --accent: #6f9fe8;
   --soft: #151e37;
 }
 * {
@@ -167,14 +167,17 @@ header {
   color: var(--accent);
 }
 nav {
+  flex: 1;
   display: flex;
-  gap: 18px;
-  overflow: auto;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
   white-space: nowrap;
 }
 nav a {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--muted);
+  flex: 0 0 auto;
 }
 nav a.active,
 nav a:hover {
@@ -925,6 +928,90 @@ footer {
   .theme-toggle {
     padding: 10px;
     font-size: 11px;
+  }
+}
+
+.local .meter:last-of-type {
+  margin-bottom: 16px;
+}
+
+.local .bullet:first-of-type {
+  margin-top: 10px;
+}
+
+.chart .bar {
+  height: var(--bar-height);
+}
+
+.chart .bar label {
+  color: var(--ink);
+}
+
+.nps-seal {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  flex: 0 0 auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-seal {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 12px 0 0;
+}
+
+.fine-print {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+  max-width: 500px;
+}
+
+.theme-toggle {
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.header-inner nav {
+  min-width: 0;
+}
+
+.login-card h1 {
+  font-size: clamp(38px, 7.5vw, 80px);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 560px) {
+  .sdlc-strip {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .sdlc-step {
+    min-height: 125px;
+    padding: 8px 5px;
+  }
+
+  .sdlc-step span {
+    font-size: 11px;
+  }
+
+  .sdlc-step small {
+    font-size: 9px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
