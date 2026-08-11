@@ -17,10 +17,10 @@ async function sign(value: string, secret: string) {
 export async function POST(req: Request) {
   const data = await req.formData();
   if (data.get("password") !== (process.env.SITE_PASSWORD || "cloud-agents-dev"))
-    return NextResponse.redirect(new URL("/login?error=1", req.url));
+    return NextResponse.redirect(new URL("/login?error=1", req.url), 303);
   const value = "granted";
   const token = `${value}.${await sign(value, process.env.COOKIE_SECRET || "development-cookie-secret")}`;
-  const response = NextResponse.redirect(new URL("/", req.url));
+  const response = NextResponse.redirect(new URL("/", req.url), 303);
   response.cookies.set("site_access", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
