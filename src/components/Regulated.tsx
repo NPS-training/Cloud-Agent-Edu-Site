@@ -9,6 +9,8 @@ export function Regulated() {
             <span key={badge}>{badge}</span>
           ))}
         </div>
+        <p className="compliance-isolation">{regulated.isolation}</p>
+        <p className="compliance-caveat">{regulated.caveat}</p>
         <ul className="deployment-chips">
           {regulated.deployed
             .replace("Deployed with: ", "")
@@ -17,8 +19,6 @@ export function Regulated() {
               <li key={deployment}>{deployment}</li>
             ))}
         </ul>
-        <p className="compliance-isolation">{regulated.isolation}</p>
-        <p className="compliance-caveat">{regulated.caveat}</p>
       </div>
     </Section>
   );

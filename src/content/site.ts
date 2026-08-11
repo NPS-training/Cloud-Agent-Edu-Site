@@ -150,19 +150,19 @@ export const bottleneck = {
 export const capabilities = [
   {
     title: "A dedicated execution environment per task",
-    body: "its own VM, its own filesystem, no contention with your laptop or with other agents.",
+    body: "It has its own VM and filesystem, with no contention with your laptop or other agents.",
   },
   {
     title: "State that persists across steps and time",
-    body: "a long-running task can install, build, fail, fix, and come back to it hours later.",
+    body: "A long-running task can install, build, fail, fix, and come back to it hours later.",
   },
   {
     title: "Real commands in a real Linux environment",
-    body: "install packages, run migrations, hit a database, drive a browser. Linux by default because it's cheaper and faster; Windows, macOS/iOS, and Android when the target needs it.",
+    body: "It can install packages, run migrations, hit a database, and drive a browser. Linux by default because it's cheaper and faster; Windows, macOS/iOS, and Android when the target needs it.",
   },
   {
     title: "Observes results and adapts",
-    body: "it runs the thing, reads the failure, and tries again.",
+    body: "It runs the thing, reads the failure, and tries again.",
   },
 ];
 export const executionClose =
@@ -236,16 +236,16 @@ export const context = {
   pillars: [
     {
       title: "Devin gets better with every PR",
-      body: "captures feedback, learns your codebase over time, and bridges the pilot-to-production gap.",
+      body: "It captures feedback, learns your codebase over time, and bridges the pilot-to-production gap.",
       source: "MIT, 2025",
     },
     {
       title: "Knowledge that builds, not resets",
-      body: "decisions are codified as knowledge items and applied to future tasks.",
+      body: "Decisions are codified as knowledge items and applied to future tasks.",
     },
     {
       title: "Context-aware application",
-      body: "context is retained across repos and workflows, so the right knowledge item is auto-applied to the right task.",
+      body: "Context is retained across repos and workflows, so the right knowledge item is auto-applied to the right task.",
     },
   ],
   sources: [
@@ -312,56 +312,77 @@ export const caseStudies = [
   {
     category: "Code migration",
     name: "Mercedes-Benz",
-    body: "8 days to complete 8 months of COBOL work; 200,000+ lines of legacy code analyzed and migrated in a 4-week pilot.",
+    metric: "8 days",
+    body: "to complete 8 months of COBOL work; 200,000+ lines of legacy code analyzed and migrated in a 4-week pilot.",
   },
   {
     category: "Data engineering",
     name: "Nubank",
-    body: "20x cost savings on ETL migration; 6M+ lines refactored. Planned for 1,000+ engineers over 18 months, completed in weeks.",
+    metric: "20x",
+    body: "cost savings on ETL migration; 6M+ lines refactored. Planned for 1,000+ engineers over 18 months, completed in weeks.",
   },
   {
     category: "Vulnerability & bug triage",
     name: "Itaú",
-    body: "70% of security vulnerabilities automatically remediated, across thousands of repos.",
+    metric: "70%",
+    body: "of security vulnerabilities automatically remediated, across thousands of repos.",
   },
   {
     category: "QA & test generation",
     name: "Rivian–Volkswagen Technologies",
-    body: "10x increase in test-generation velocity; from 1–2 tests per engineer-day to 10–15.",
+    metric: "10x",
+    body: "increase in test-generation velocity; from 1–2 tests per engineer-day to 10–15.",
   },
   {
     category: "Documentation",
     name: "Evinova",
-    body: "8x faster regulatory documentation; specs that took 35–40 hours of coordination now generate in 5–10 minutes.",
+    metric: "8x",
+    body: "faster regulatory documentation; specs that took 35–40 hours of coordination now generate in 5–10 minutes.",
   },
   {
     category: "Product development",
     name: "Gumroad",
-    body: "#1 code contributor in 5 of 7 most active repos; 1,500+ PRs merged at an 85% merge rate, ~10 per day.",
+    metric: "#1",
+    body: "code contributor in 5 of 7 most active repos; 1,500+ PRs merged at an 85% merge rate, ~10 per day.",
   },
   {
     category: "Technical-debt burndown",
     name: "Ramp",
-    body: "10k+ hours saved each month on rote tasks.",
+    metric: "10k+",
+    body: "hours saved each month on rote tasks.",
   },
   {
     category: "Application modernization",
     name: "AngelList",
-    body: "5.2x faster Redshift-to-Snowflake migration; 1 data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
+    metric: "5.2x",
+    body: "faster Redshift-to-Snowflake migration; 1 data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
   },
 ];
 export const gettingStarted = [
   {
     tier: "Easy",
-    body: 'Take a first stab at new work: "@Devin, what would it take to build X?" · Chores, repetitive tasks and technical grunt work: "Update all the relevant documentation."',
+    heading: "Start with a question",
+    examples: [
+      '"@Devin, what would it take to build X?"',
+      '"Update all the relevant documentation."',
+    ],
   },
   {
     tier: "Intermediate",
-    body: 'Co-develop PRDs and plans of attack: "Plan a phased migration from Angular to React 18." · Delegate to multiple agents at once: parallel sessions, one per UI component.',
+    heading: "Plan and parallelize",
+    examples: [
+      '"Plan a phased migration from Angular to React 18."',
+      "Parallel sessions, one per UI component.",
+    ],
   },
   {
     tier: "Advanced",
-    body: "Automate end-to-end workflows (dependency upgrades, feature-flag removal) · Intelligent code review wired into CI/CD · Incident and alert triage via the API.",
+    heading: "Automate the loop",
+    examples: [
+      "Dependency upgrades and feature-flag removal",
+      "Intelligent code review wired into CI/CD",
+      "Incident and alert triage via the API",
+    ],
   },
 ];
 export const firstWeek =
@@ -380,15 +401,15 @@ export const whyCognition = [
   },
   {
     title: "Execution architecture for agent fleets",
-    body: "dedicated environments, persistent state, thousands of concurrent agents at a fraction of VM cost. Purpose-built for cloud from day one.",
+    body: "It provides dedicated environments, persistent state, and thousands of concurrent agents at a fraction of VM cost. It was purpose-built for cloud from day one.",
   },
   {
     title: "Model-agnostic, no vendor lock-in",
-    body: "auto-routes across Anthropic, OpenAI, Google and more, optimizing for accuracy, latency, and cost.",
+    body: "It auto-routes across Anthropic, OpenAI, Google, and more, optimizing for accuracy, latency, and cost.",
   },
   {
     title: "Dedicated FDE partnership to drive adoption",
-    body: "forward-deployed engineers own technical success end-to-end; the AI DevEx team embeds onsite. Every completed program: 2–4x adoption.",
+    body: "Forward-deployed engineers own technical success end-to-end, and the AI DevEx team embeds onsite. Every completed program delivers 2–4x adoption.",
   },
 ];
 export const metaCopy = [

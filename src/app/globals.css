@@ -1142,3 +1142,74 @@ small {
     width: 100%;
   }
 }
+
+.tier-examples {
+  margin-top: 8px;
+}
+
+.tier-examples li {
+  width: 100%;
+}
+
+.case {
+  border: 1px solid var(--line);
+  padding: 18px;
+  background: color-mix(in srgb, var(--bg) 90%, var(--soft));
+}
+
+.case-metric {
+  display: block;
+  color: var(--accent);
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 10px;
+}
+
+.checklist > h3 {
+  width: 100%;
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 46px 0;
+  }
+
+  .hero {
+    padding: 48px 0 52px;
+  }
+
+  .case-grid {
+    gap: 10px;
+    margin-top: 42px;
+  }
+
+  .case {
+    padding: 14px;
+  }
+
+  .case h3 {
+    font-size: 18px;
+  }
+
+  .case-metric {
+    font-size: 27px;
+  }
+
+  .chart {
+    gap: 5px;
+    height: 240px;
+  }
+
+  .chart .bar label {
+    font-size: 9px;
+  }
+
+  .routing {
+    gap: 14px;
+    margin: 36px 0;
+  }
+}

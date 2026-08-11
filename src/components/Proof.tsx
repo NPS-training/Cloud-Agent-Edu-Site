@@ -49,7 +49,9 @@ export function Proof() {
           <article className="case" key={study.name}>
             <span className="eyebrow">{study.category}</span>
             <h3>{study.name}</h3>
-            <p>{study.body}</p>
+            <p>
+              <strong className="case-metric">{study.metric}</strong> {study.body}
+            </p>
           </article>
         ))}
       </div>
