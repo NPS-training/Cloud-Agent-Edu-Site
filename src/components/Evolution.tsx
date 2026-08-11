@@ -6,6 +6,7 @@ import { Section } from "./Section";
 export function Evolution() {
   const [selected, setSelected] = useState(2);
   const active = evolutionLevels[selected];
+  const chartPositions = [70, 242, 414, 586, 758, 930];
   return (
     <Section
       id="evolution"
@@ -15,30 +16,49 @@ export function Evolution() {
     >
       <div className="evolution-wrap">
         <div className="evolution-chart" aria-label="Evolution curve from L0 to L5">
-          <div className="evolution-chart-labels" aria-hidden="true">
-            {evolutionLevels.map((level) => (
-              <span key={level.level}>{level.level}</span>
-            ))}
-          </div>
           <svg viewBox="0 0 1000 180" preserveAspectRatio="none" role="img">
             <title>Exponential growth from L0 to L5</title>
-            <path
-              className="evolution-grid-line"
-              d="M 70 0 V 180 M 242 0 V 180 M 414 0 V 180 M 586 0 V 180 M 758 0 V 180 M 930 0 V 180"
+            {chartPositions.map((position, index) => (
+              <g key={position}>
+                <line className="evolution-grid-line" x1={position} x2={position} y1="0" y2="180" />
+                <text className="evolution-chart-label" x={position} y="12">
+                  {evolutionLevels[index].level}
+                </text>
+              </g>
+            ))}
+            <line
+              className="evolution-chart-divider-line"
+              x1={chartPositions[3]}
+              x2={chartPositions[3]}
+              y1="38"
+              y2="180"
             />
+            <text className="evolution-chart-divider-label left" x={chartPositions[3] - 12} y="42">
+              <tspan x={chartPositions[3] - 12} dy="0">
+                Augmenting
+              </tspan>
+              <tspan x={chartPositions[3] - 12} dy="12">
+                individuals
+              </tspan>
+            </text>
+            <text className="evolution-chart-divider-label right" x={chartPositions[3] + 12} y="42">
+              <tspan x={chartPositions[3] + 12} dy="0">
+                Multiplying
+              </tspan>
+              <tspan x={chartPositions[3] + 12} dy="12">
+                teams
+              </tspan>
+            </text>
             <motion.path
               className="evolution-curve"
               d="M 70 148 C 250 146 360 138 500 118 S 760 55 930 12"
+              pathLength={1}
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.4, ease: "easeOut" }}
             />
           </svg>
-          <div className="evolution-chart-divider" aria-hidden="true">
-            <span>Augmenting individuals</span>
-            <span>Multiplying teams</span>
-          </div>
         </div>
         <div className="evolution-matrix">
           <div className="matrix-label">Dimension</div>

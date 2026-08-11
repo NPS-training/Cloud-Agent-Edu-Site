@@ -274,8 +274,7 @@ export const models = {
     { name: "GPT", label: "OpenAI" },
     { name: "Gemini", label: "Google" },
     { name: "SWE", label: "Cognition" },
-    { name: "Others", label: "Open source" },
-    { name: "Specialized", label: "Specialized" },
+    { name: "Others", label: "Open source, specialized" },
   ],
   destinations: [
     { name: "Instructions", label: "CLAUDE" },
@@ -342,7 +341,7 @@ export const caseStudies = [
     logo: "/logos/mercedes-benz.png",
     metric: "8 days",
     descriptor: "COBOL migration",
-    body: "to complete 8 months of COBOL work; 200,000+ lines of legacy code analyzed and migrated in a 4-week pilot.",
+    body: "Devin completed 8 months of COBOL work in a 4-week pilot, analyzing and migrating 200,000+ lines of legacy code.",
   },
   {
     category: "Data engineering",
@@ -350,7 +349,7 @@ export const caseStudies = [
     logo: "/logos/nubank.png",
     metric: "20x",
     descriptor: "ETL migration",
-    body: "cost savings on ETL migration; 6M+ lines refactored. Planned for 1,000+ engineers over 18 months, completed in weeks.",
+    body: "Devin refactored 6M+ lines for a program planned for 1,000+ engineers over 18 months and completed in weeks.",
   },
   {
     category: "Vulnerability & bug triage",
@@ -358,7 +357,7 @@ export const caseStudies = [
     logo: "/logos/itau.png",
     metric: "70%",
     descriptor: "vulnerabilities remediated",
-    body: "of security vulnerabilities automatically remediated, across thousands of repos.",
+    body: "Devin triaged and patched vulnerabilities across thousands of repos.",
   },
   {
     category: "QA & test generation",
@@ -366,7 +365,7 @@ export const caseStudies = [
     logo: "/logos/rivian-volkswagen.png",
     metric: "10x",
     descriptor: "test generation",
-    body: "increase in test-generation velocity; from 1–2 tests per engineer-day to 10–15.",
+    body: "Test-generation velocity rose from 1–2 tests per engineer-day to 10–15.",
   },
   {
     category: "Documentation",
@@ -374,7 +373,7 @@ export const caseStudies = [
     logo: "/logos/evinova.png",
     metric: "8x",
     descriptor: "regulatory documentation",
-    body: "faster regulatory documentation; specs that took 35–40 hours of coordination now generate in 5–10 minutes.",
+    body: "Specs that required 35–40 hours of coordination now generate in 5–10 minutes.",
   },
   {
     category: "Product development",
@@ -382,7 +381,7 @@ export const caseStudies = [
     logo: "/logos/gumroad.png",
     metric: "#1",
     descriptor: "active-repo contributor",
-    body: "code contributor in 5 of 7 most active repos; 1,500+ PRs merged at an 85% merge rate, ~10 per day.",
+    body: "Devin merged 1,500+ PRs at an 85% merge rate, ~10 per day, across 5 of 7 most active repos.",
   },
   {
     category: "Technical-debt burndown",
@@ -390,7 +389,7 @@ export const caseStudies = [
     logo: "/logos/ramp.png",
     metric: "10k+",
     descriptor: "hours saved monthly",
-    body: "hours saved each month on rote tasks.",
+    body: "Rote tasks account for the hours saved each month.",
   },
   {
     category: "Application modernization",
@@ -398,7 +397,7 @@ export const caseStudies = [
     logo: "/logos/angellist.png",
     metric: "5.2x",
     descriptor: "warehouse migration",
-    body: "faster Redshift-to-Snowflake migration; 1 data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
+    body: "One data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
   },
 ];
 export const gettingStarted = [

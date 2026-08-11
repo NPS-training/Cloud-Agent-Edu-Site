@@ -351,40 +351,39 @@ nav a:hover {
   stroke: var(--line);
   stroke-width: 1;
 }
-.evolution-curve {
-  fill: none;
+.evolution-chart-label {
+  fill: var(--muted);
+  font:
+    11px var(--font-mono),
+    ui-monospace,
+    monospace;
+  text-anchor: middle;
+}
+.evolution-chart-divider-line {
   stroke: var(--accent);
-  stroke-width: 3;
-  stroke-dasharray: 1 10;
-  stroke-linecap: round;
+  stroke-width: 1;
 }
-.evolution-chart-divider {
-  position: absolute;
-  top: 42px;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: var(--accent);
-}
-.evolution-chart-divider span {
-  position: absolute;
-  top: 8px;
-  width: 150px;
-  color: var(--accent);
+.evolution-chart-divider-label {
+  fill: var(--accent);
   font:
     10px var(--font-mono),
     ui-monospace,
     monospace;
   letter-spacing: 0.08em;
-  line-height: 1.2;
   text-transform: uppercase;
 }
-.evolution-chart-divider span:first-child {
-  right: 12px;
-  text-align: right;
+.evolution-chart-divider-label.left {
+  text-anchor: end;
 }
-.evolution-chart-divider span:last-child {
-  left: 12px;
+.evolution-chart-divider-label.right {
+  text-anchor: start;
+}
+.evolution-curve {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-dasharray: 0.01 0.025;
+  stroke-linecap: round;
 }
 .evolution-mobile-tabs {
   display: none;
@@ -704,8 +703,8 @@ blockquote {
 .dest span {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 10px;
   padding: 5px 0;
   font-size: 14px;
 }
@@ -731,17 +730,11 @@ blockquote {
   color: var(--accent);
   font-weight: bold;
 }
-.router small {
-  display: block;
-  font-weight: normal;
-  color: var(--muted);
-  margin-top: 8px;
-}
 .routing-lines {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 320px;
+  height: 100%;
   pointer-events: none;
   overflow: visible;
 }
@@ -856,7 +849,7 @@ blockquote {
 }
 .case-company {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin: 15px 0 18px;
 }
@@ -864,6 +857,8 @@ blockquote {
   width: 36px;
   height: 36px;
   object-fit: contain;
+  flex: 0 0 auto;
+  margin-top: 2px;
 }
 [data-theme="dark"] .case-logo {
   filter: invert(1);
@@ -1569,8 +1564,7 @@ small {
   .evolution-chart svg {
     height: 132px;
   }
-  .evolution-chart-divider span {
-    width: 112px;
+  .evolution-chart-divider-label {
     font-size: 9px;
   }
 }
