@@ -1160,58 +1160,79 @@ small {
 .deployment-chips {
   margin-bottom: 28px;
 }
-.deployment-logos {
+.deployment-groups {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  gap: 20px;
   margin: 28px 0 18px;
 }
-.deployment-logo {
+.deployment-group {
   min-width: 0;
+}
+.deployment-group-caption {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.deployment-logos {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.deployment-logo {
+  width: 74px;
   display: grid;
   justify-items: center;
   gap: 5px;
   text-align: center;
 }
-.deployment-relationship {
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
 .logo-plate {
-  width: 100%;
-  height: 76px;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
 }
 .logo-plate.seal {
-  background: #fff;
-  border-radius: 4px;
-  padding: 8px;
+  background: transparent;
 }
 .logo-plate img {
   width: auto;
-  max-width: 110px;
+  max-width: 32px;
   height: auto;
-  max-height: 52px;
+  max-height: 32px;
   object-fit: contain;
 }
 .logo-plate.seal img {
-  max-width: 52px;
-  max-height: 52px;
+  width: 30px;
+  height: 30px;
 }
 .logo-plate.dark-mark img {
-  max-width: 110px;
-  max-height: 28px;
+  max-width: 32px;
+  max-height: 18px;
+  transform: scale(1.25);
+}
+.logo-plate.nrl-mark img {
+  transform: scale(1.5);
 }
 [data-theme="dark"] .logo-plate.dark-mark img {
   filter: invert(1);
+}
+[data-theme="dark"] .logo-plate.seal {
+  background: #fff;
+  border-radius: 4px;
 }
 .deployment-name {
   color: var(--ink);
   font-size: 12px;
   line-height: 1.2;
+}
+.deployment-primes {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 28px;
 }
 .compliance-isolation {
   font-size: 18px !important;
@@ -1259,8 +1280,8 @@ small {
   .compliance-badges {
     grid-template-columns: repeat(2, 1fr);
   }
-  .deployment-logos {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .deployment-logo {
+    width: 68px;
   }
 }
 @media (max-width: 560px) {
@@ -1285,11 +1306,11 @@ small {
     width: 100%;
   }
   .deployment-logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: flex-start;
     gap: 12px 8px;
   }
-  .logo-plate {
-    height: 64px;
+  .deployment-group-caption {
+    margin-bottom: 6px;
   }
   .deployment-name {
     font-size: 11px;

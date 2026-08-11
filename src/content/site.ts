@@ -285,34 +285,28 @@ export const models = {
 };
 export const regulated = {
   badges: ["FedRAMP High", "IL4 / IL5", "CUI", "ITAR"],
-  organizations: [
-    { name: "NAVAIR", logo: "/logos/navair.png", relationship: "Deployed with", variant: "seal" },
-    { name: "NRL", logo: "/logos/nrl.svg", relationship: "Deployed with", variant: "dark-mark" },
-    { name: "NASA", logo: "/logos/nasa.svg", relationship: "Deployed with", variant: "seal" },
+  governmentOrganizations: [
+    { name: "NAVAIR", logo: "/logos/navair.png", variant: "seal" },
+    { name: "NRL", logo: "/logos/nrl.svg", variant: "dark-mark nrl-mark" },
+    { name: "NASA", logo: "/logos/nasa.svg", variant: "seal" },
     {
       name: "Treasury",
       logo: "/logos/treasury.svg",
-      relationship: "Deployed with",
       variant: "seal",
     },
     {
       name: "Social Security Administration",
       logo: "/logos/ssa.svg",
-      relationship: "Deployed with",
       variant: "seal",
     },
-    {
-      name: "Palantir",
-      logo: "/logos/palantir.svg",
-      relationship: "Customer",
-      variant: "dark-mark",
-    },
-    { name: "Anduril", logo: "/logos/anduril.svg", relationship: "Customer", variant: "dark-mark" },
+  ],
+  commercialOrganizations: [
+    { name: "Palantir", logo: "/logos/palantir.svg", variant: "dark-mark" },
+    { name: "Anduril", logo: "/logos/anduril.svg", variant: "dark-mark" },
   ],
   caveat:
     "ATOs are always environment-specific. This covers the platform's authorizations, not a blanket approval for your enclave.",
-  deployed:
-    "Deployed with: NAVAIR · NRL · NASA · Treasury · Social Security Administration · five of the top seven U.S. defense primes.",
+  primes: "Also deployed with five of the top seven U.S. defense primes.",
   isolation:
     "Every session runs in its own isolated environment, which is what makes parallel work safe to run on sensitive code.",
 };
