@@ -3,18 +3,16 @@ export const BUILD_COST = "a few cents of compute";
 export type NavItem = { number: string; label: string; id: string };
 export const navItems: NavItem[] = [
   { number: "01", label: "What", id: "cold-open" },
-  { number: "02", label: "Evolution", id: "evolution" },
-  { number: "03", label: "Bottleneck", id: "bottleneck" },
-  { number: "04", label: "Machine", id: "execution" },
-  { number: "05", label: "Fleet", id: "fleet" },
-  { number: "06", label: "Patterns", id: "patterns" },
-  { number: "07", label: "Context", id: "context" },
-  { number: "08", label: "Models", id: "models" },
-  { number: "09", label: "Regulated", id: "regulated" },
-  { number: "10", label: "Proof", id: "proof" },
-  { number: "11", label: "Start", id: "start" },
-  { number: "12", label: "Why Cognition", id: "why" },
-  { number: "13", label: "Meta", id: "meta" },
+  { number: "02", label: "Machine", id: "execution" },
+  { number: "03", label: "Fleet", id: "fleet" },
+  { number: "04", label: "Patterns", id: "patterns" },
+  { number: "05", label: "Context", id: "context" },
+  { number: "06", label: "Models", id: "models" },
+  { number: "07", label: "Regulated", id: "regulated" },
+  { number: "08", label: "Proof", id: "proof" },
+  { number: "09", label: "Start", id: "start" },
+  { number: "10", label: "Why Cognition", id: "why" },
+  { number: "11", label: "Meta", id: "meta" },
 ];
 export type ContrastCard = {
   title: string;
@@ -157,8 +155,8 @@ export const capabilities = [
     body: "A long-running task can install, build, fail, fix, and come back to it hours later.",
   },
   {
-    title: "Real commands in a real Linux environment",
-    body: "It can install packages, run migrations, hit a database, and drive a browser. Linux by default because it's cheaper and faster; Windows, macOS/iOS, and Android when the target needs it.",
+    title: "Real commands in Linux or macOS environments",
+    body: "It can install packages, run migrations, hit a database, and drive a browser. Linux is the default, with macOS when the target needs it. iOS and Android emulators support mobile verification.",
   },
   {
     title: "Observes results and adapts",
@@ -225,6 +223,16 @@ export const patterns: Pattern[] = [
       "End-to-end delegation of easy tasks · Cloud handoff for implementation & testing · Addressing PR comments · Fixing CI failures",
   },
 ];
+export const handoff = {
+  title: "Hand off the machine work",
+  body: "The Devin CLI can send a task to a cloud session with its built-in /handoff command. Claude Code, Codex, Cursor, and other agents can use the open-source Devin Handoff plugin. It packages the repo, branch, uncommitted diff, and current context so Devin can continue on its own VM after you close your laptop.",
+  triggers: [
+    "Dev servers and Docker builds",
+    "Browser, OAuth, and end-to-end tests",
+    "CI debugging and long migrations",
+    "Parallel work while you keep coding locally",
+  ],
+};
 export const securityBacklog = [
   'Static and dynamic scanners add dozens of low-priority findings a day. Each one is too small to justify an engineer\'s afternoon, so teams mark it "later" and the backlog grows.',
   "That backlog used to be tolerable because chaining low-severity findings into a real exploit took dedicated, nation-state-grade effort, and most systems were never worth that effort. That assumption no longer holds. The cost of chaining exploits has collapsed. The human economics have not changed. An engineer opening a laptop after hours costs far more than the dollar or so of compute an agent needs to remediate a finding and open the PR.",

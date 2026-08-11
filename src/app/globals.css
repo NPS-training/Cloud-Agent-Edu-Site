@@ -176,7 +176,7 @@ nav {
   white-space: nowrap;
 }
 nav a {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--muted);
   flex: 0 0 auto;
 }
@@ -1210,6 +1210,8 @@ small {
 .logo-plate.seal img {
   width: 80px;
   height: 80px;
+  max-width: 80px;
+  max-height: 80px;
 }
 .logo-plate.dark-mark img {
   width: 100px;
@@ -1218,6 +1220,7 @@ small {
 .logo-plate.nrl-mark img {
   width: 96px;
   height: 24px;
+  transform: scale(2);
 }
 [data-theme="dark"] .logo-plate.dark-mark img {
   filter: invert(1);
@@ -1329,9 +1332,6 @@ small {
   .deployment-name {
     font-size: 13px;
     min-height: 34px;
-  }
-  .deployment-name {
-    font-size: 11px;
   }
 }
 

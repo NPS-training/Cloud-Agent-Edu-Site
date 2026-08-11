@@ -1,4 +1,4 @@
-import { patterns, securityBacklog } from "@/content/site";
+import { handoff, patterns, securityBacklog } from "@/content/site";
 import { Section } from "./Section";
 export function Patterns() {
   return (
@@ -21,6 +21,15 @@ export function Patterns() {
             </ul>
           </article>
         ))}
+      </div>
+      <div className="callout handoff-callout">
+        <b>{handoff.title}</b>
+        <p>{handoff.body}</p>
+        <ul className="chip-list">
+          {handoff.triggers.map((trigger) => (
+            <li key={trigger}>{trigger}</li>
+          ))}
+        </ul>
       </div>
       <details className="worked-example">
         <summary>Worked example · the security backlog</summary>
