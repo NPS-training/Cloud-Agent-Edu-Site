@@ -285,6 +285,30 @@ export const models = {
 };
 export const regulated = {
   badges: ["FedRAMP High", "IL4 / IL5", "CUI", "ITAR"],
+  organizations: [
+    { name: "NAVAIR", logo: "/logos/navair.png", relationship: "Deployed with", variant: "seal" },
+    { name: "NRL", logo: "/logos/nrl.svg", relationship: "Deployed with", variant: "dark-mark" },
+    { name: "NASA", logo: "/logos/nasa.svg", relationship: "Deployed with", variant: "seal" },
+    {
+      name: "Treasury",
+      logo: "/logos/treasury.svg",
+      relationship: "Deployed with",
+      variant: "seal",
+    },
+    {
+      name: "Social Security Administration",
+      logo: "/logos/ssa.svg",
+      relationship: "Deployed with",
+      variant: "seal",
+    },
+    {
+      name: "Palantir",
+      logo: "/logos/palantir.svg",
+      relationship: "Customer",
+      variant: "dark-mark",
+    },
+    { name: "Anduril", logo: "/logos/anduril.svg", relationship: "Customer", variant: "dark-mark" },
+  ],
   caveat:
     "ATOs are always environment-specific. This covers the platform's authorizations, not a blanket approval for your enclave.",
   deployed:

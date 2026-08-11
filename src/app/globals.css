@@ -1160,6 +1160,59 @@ small {
 .deployment-chips {
   margin-bottom: 28px;
 }
+.deployment-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 28px 0 18px;
+}
+.deployment-logo {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  text-align: center;
+}
+.deployment-relationship {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.logo-plate {
+  width: 100%;
+  height: 76px;
+  display: grid;
+  place-items: center;
+}
+.logo-plate.seal {
+  background: #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+.logo-plate img {
+  width: auto;
+  max-width: 110px;
+  height: auto;
+  max-height: 52px;
+  object-fit: contain;
+}
+.logo-plate.seal img {
+  max-width: 52px;
+  max-height: 52px;
+}
+.logo-plate.dark-mark img {
+  max-width: 110px;
+  max-height: 28px;
+}
+[data-theme="dark"] .logo-plate.dark-mark img {
+  filter: invert(1);
+}
+.deployment-name {
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.2;
+}
 .compliance-isolation {
   font-size: 18px !important;
 }
@@ -1206,6 +1259,9 @@ small {
   .compliance-badges {
     grid-template-columns: repeat(2, 1fr);
   }
+  .deployment-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 @media (max-width: 560px) {
   .section {
@@ -1227,6 +1283,16 @@ small {
   }
   .context-sources > b {
     width: 100%;
+  }
+  .deployment-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 8px;
+  }
+  .logo-plate {
+    height: 64px;
+  }
+  .deployment-name {
+    font-size: 11px;
   }
 }
 
