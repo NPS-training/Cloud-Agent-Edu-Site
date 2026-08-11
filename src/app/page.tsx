@@ -13,6 +13,7 @@ import { Context } from "@/components/Context";
 import { ModelRouting } from "@/components/ModelRouting";
 import { Regulated } from "@/components/Regulated";
 import { Proof } from "@/components/Proof";
+import { Programs } from "@/components/Programs";
 import { GettingStarted } from "@/components/GettingStarted";
 import { WhyCognition } from "@/components/WhyCognition";
 import { Meta } from "@/components/Meta";
@@ -43,6 +44,7 @@ export default function Home() {
         <ModelRouting />
         <Regulated />
         <Proof />
+        <Programs />
         <GettingStarted />
         <WhyCognition />
         <Meta />

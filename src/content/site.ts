@@ -10,9 +10,9 @@ export const navItems: NavItem[] = [
   { number: "06", label: "Models", id: "models" },
   { number: "07", label: "Regulated", id: "regulated" },
   { number: "08", label: "Proof", id: "proof" },
-  { number: "09", label: "Start", id: "start" },
-  { number: "10", label: "Why Cognition", id: "why" },
-  { number: "11", label: "Meta", id: "meta" },
+  { number: "09", label: "Programs", id: "programs" },
+  { number: "10", label: "Start", id: "start" },
+  { number: "11", label: "Why Cognition", id: "why" },
 ];
 export type ContrastCard = {
   title: string;
@@ -400,6 +400,120 @@ export const caseStudies = [
     body: "One data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
   },
 ];
+export type ProgramGroup = {
+  caption: string;
+  items: { program: string; curriculum: string; body: string }[];
+};
+export const programs = {
+  lede: "Cloud agents are not only for people whose job title is software engineer. The work below is drawn from the NPS program menu, grouped by how directly a cloud agent applies. Every example is a use of Devin as it exists today, not a claim about current NPS practice.",
+  groups: [
+    {
+      caption: "Software is the deliverable",
+      items: [
+        {
+          program: "Computer Science",
+          curriculum: "Curriculum 368",
+          body: "Thesis code, ML experiments, and secure-systems prototypes. Agents run experiment sweeps in parallel across separate machines, so a thesis is bounded by how fast results can be interpreted rather than how fast code can be typed.",
+        },
+        {
+          program: "MS in Applied Cyber Ops",
+          curriculum: "Curriculum 326",
+          body: "Tooling for lab ranges, parsers, and test harnesses. Triage at repository scale is the Itaú pattern in the case studies above: an agent reads the finding, writes the patch, and opens the PR for review.",
+        },
+        {
+          program: "Information Systems & Technology",
+          curriculum: "Curriculum 370",
+          body: "Modernization of the systems the program studies. Legacy migration and ETL rework are the two case studies with the largest numbers attached, and both are the kind of high-volume, well-specified work that an agent fleet absorbs.",
+        },
+        {
+          program: "Information Warfare",
+          curriculum: "Curriculum 595",
+          body: "Signal and data-processing code, plus the glue between simulation and analysis. Work in the information environment usually means moving data between tools that were never designed to talk to each other.",
+        },
+        {
+          program: "Electronic Systems Engineering",
+          curriculum: "Curriculum 590",
+          body: "Radar and communications projects that reach real hardware. The de-identified case study above is exactly this shape: HDL, synthesis scripts, and overnight debug loops against a physical dev kit.",
+        },
+        {
+          program: "Modeling Virtual Environments and Simulation",
+          curriculum: "Curriculum 399",
+          body: "Scenario code, instrumentation, and the interfaces between simulations and C2 systems. Agents can also generate the test coverage that keeps a simulation trustworthy as it grows.",
+        },
+      ],
+    },
+    {
+      caption: "Code is the instrument, not the product",
+      items: [
+        {
+          program: "Operations Research",
+          curriculum: "Curriculum 360",
+          body: "Optimization models, statistical pipelines, and course-of-action comparisons. An agent writes the model and cleans the data; parallel runs mean many formulations get tested instead of the one there was time for.",
+        },
+        {
+          program: "Defense Systems Analysis",
+          curriculum: "Curriculum 817",
+          body: "Cost estimation and decision analysis, including the unglamorous data preparation that consumes most of the schedule.",
+        },
+        {
+          program: "Manpower Systems Analysis",
+          curriculum: "Curriculum 847",
+          body: "Forecasting and force-structure models, rebuilt and re-run as assumptions change.",
+        },
+        {
+          program: "Financial Management",
+          curriculum: "Curriculum 837",
+          body: "Budget models and audit-quality reconciliation across large data sets.",
+        },
+        {
+          program: "Materiel Logistics Support",
+          curriculum: "Curriculum 827",
+          body: "Inventory and transportation models, and the reporting built on top of them.",
+        },
+        {
+          program: "Applied Physics of Combat Systems",
+          curriculum: "Curriculum 533",
+          body: "Numerical modeling of weapons and sensor behavior, and the simulation code that supports it.",
+        },
+        {
+          program: "Space Systems Operations",
+          curriculum: "Curriculum 566",
+          body: "Orbital and spacecraft analysis code. Work in this program is often classified, which is why the deployment posture in the previous section matters more than any single feature.",
+        },
+      ],
+    },
+    {
+      caption: "The consumer of what agents produce",
+      items: [
+        {
+          program: "Defense Program Management",
+          curriculum: "Curriculum 816",
+          body: "Program offices are already receiving software written with agents. Knowing what a review-ready agent PR looks like, and what velocity is now reasonable to expect, changes how a schedule is judged.",
+        },
+        {
+          program: "Defense Contract Management",
+          curriculum: "Curriculum 815",
+          body: "Contract language and evaluation criteria have not caught up to agent-assisted delivery. Cost and schedule assumptions built on human-only throughput are the first thing to revisit.",
+        },
+        {
+          program: "Applied Design for Innovation",
+          curriculum: "Curriculum 697",
+          body: "Design work depends on prototypes being cheap enough to throw away. A prototype an agent builds overnight is cheap enough to abandon in the morning.",
+        },
+        {
+          program: "Special Operations and Irregular Warfare",
+          curriculum: "Curriculum 699",
+          body: "Small teams that need a tool now, built by whoever has the problem rather than whoever has the language.",
+        },
+        {
+          program: "Regional Security Studies and Regional Security Studies Certificates",
+          curriculum: "Curricula 681 to 684, 246 to 249",
+          body: "The least direct fit, and still real: document processing at volume, repeatable data collection, and small internal tools that would otherwise be a spreadsheet maintained by hand.",
+        },
+      ],
+    },
+  ] satisfies ProgramGroup[],
+};
 export const gettingStarted = [
   {
     tier: "Easy",
