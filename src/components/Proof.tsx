@@ -1,6 +1,7 @@
 "use client";
 import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { caseStudies, proof } from "@/content/site";
 import { Section } from "./Section";
 export function Proof() {
@@ -49,11 +50,23 @@ export function Proof() {
       <div className="case-grid">
         {caseStudies.map((study) => (
           <article className="case" key={study.name}>
-            <span className="eyebrow">{study.category}</span>
-            <h3>{study.name}</h3>
-            <p>
-              <strong className="case-metric">{study.metric}</strong> {study.body}
-            </p>
+            <span className="eyebrow case-category">{study.category}</span>
+            <div className="case-company">
+              <Image
+                src={study.logo}
+                alt=""
+                width={36}
+                height={36}
+                className="case-logo"
+                unoptimized
+              />
+              <h3>{study.name}</h3>
+            </div>
+            <div className="case-metric-row">
+              <strong className="case-metric">{study.metric}</strong>
+              <span>{study.descriptor}</span>
+            </div>
+            <p>{study.body}</p>
           </article>
         ))}
       </div>

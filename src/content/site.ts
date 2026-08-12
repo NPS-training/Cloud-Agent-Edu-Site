@@ -10,9 +10,11 @@ export const navItems: NavItem[] = [
   { number: "06", label: "Models", id: "models" },
   { number: "07", label: "Regulated", id: "regulated" },
   { number: "08", label: "Proof", id: "proof" },
-  { number: "09", label: "Start", id: "start" },
-  { number: "10", label: "Why Cognition", id: "why" },
-  { number: "11", label: "Meta", id: "meta" },
+  { number: "09", label: "Programs", id: "programs" },
+  { number: "10", label: "Demo", id: "demo" },
+  { number: "11", label: "Start", id: "start" },
+  { number: "12", label: "Cognition", id: "why" },
+  { number: "13", label: "Meta", id: "meta" },
 ];
 export type ContrastCard = {
   title: string;
@@ -270,17 +272,17 @@ export const context = {
 };
 export const models = {
   sources: [
-    "Claude (Anthropic)",
-    "GPT (OpenAI)",
-    "Gemini (Google)",
-    "SWE (Cognition)",
-    "open-source and specialized models",
+    { name: "Claude", label: "Anthropic" },
+    { name: "GPT", label: "OpenAI" },
+    { name: "Gemini", label: "Google" },
+    { name: "SWE", label: "Cognition" },
+    { name: "Others", label: "Open source, specialized" },
   ],
   destinations: [
-    "Instructions → Claude",
-    "Retrieval → SWE",
-    "Debugging → OpenAI",
-    "Visual design → Gemini",
+    { name: "Instructions", label: "CLAUDE" },
+    { name: "Retrieval", label: "SWE" },
+    { name: "Debugging", label: "OPENAI" },
+    { name: "Visual design", label: "GEMINI" },
   ],
   fusion:
     "Devin Fusion: a multi-model harness with ~60% better cost-efficiency while maintaining frontier performance.",
@@ -338,52 +340,269 @@ export const caseStudies = [
   {
     category: "Code migration",
     name: "Mercedes-Benz",
+    logo: "/logos/mercedes-benz.png",
     metric: "8 days",
-    body: "to complete 8 months of COBOL work; 200,000+ lines of legacy code analyzed and migrated in a 4-week pilot.",
+    descriptor: "COBOL migration",
+    body: "Devin completed 8 months of COBOL work in a 4-week pilot, analyzing and migrating 200,000+ lines of legacy code.",
   },
   {
     category: "Data engineering",
     name: "Nubank",
+    logo: "/logos/nubank.png",
     metric: "20x",
-    body: "cost savings on ETL migration; 6M+ lines refactored. Planned for 1,000+ engineers over 18 months, completed in weeks.",
+    descriptor: "ETL migration",
+    body: "Devin refactored 6M+ lines for a program planned for 1,000+ engineers over 18 months and completed in weeks.",
   },
   {
     category: "Vulnerability & bug triage",
     name: "Itaú",
+    logo: "/logos/itau.png",
     metric: "70%",
-    body: "of security vulnerabilities automatically remediated, across thousands of repos.",
+    descriptor: "vulnerabilities remediated",
+    body: "Devin triaged and patched vulnerabilities across thousands of repos.",
   },
   {
     category: "QA & test generation",
     name: "Rivian–Volkswagen Technologies",
+    logo: "/logos/rivian-volkswagen.png",
     metric: "10x",
-    body: "increase in test-generation velocity; from 1–2 tests per engineer-day to 10–15.",
+    descriptor: "test generation",
+    body: "Test-generation velocity rose from 1–2 tests per engineer-day to 10–15.",
   },
   {
     category: "Documentation",
     name: "Evinova",
+    logo: "/logos/evinova.png",
     metric: "8x",
-    body: "faster regulatory documentation; specs that took 35–40 hours of coordination now generate in 5–10 minutes.",
+    descriptor: "regulatory documentation",
+    body: "Specs that required 35–40 hours of coordination now generate in 5–10 minutes.",
   },
   {
     category: "Product development",
     name: "Gumroad",
+    logo: "/logos/gumroad.png",
     metric: "#1",
-    body: "code contributor in 5 of 7 most active repos; 1,500+ PRs merged at an 85% merge rate, ~10 per day.",
+    descriptor: "active-repo contributor",
+    body: "Devin merged 1,500+ PRs at an 85% merge rate, ~10 per day, across 5 of 7 most active repos.",
   },
   {
     category: "Technical-debt burndown",
     name: "Ramp",
+    logo: "/logos/ramp.png",
     metric: "10k+",
-    body: "hours saved each month on rote tasks.",
+    descriptor: "hours saved monthly",
+    body: "Rote tasks account for the hours saved each month.",
   },
   {
     category: "Application modernization",
     name: "AngelList",
+    logo: "/logos/angellist.png",
     metric: "5.2x",
-    body: "faster Redshift-to-Snowflake migration; 1 data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
+    descriptor: "warehouse migration",
+    body: "One data engineer and 20 Devin agents migrated 14,000 analytics cards in 3 weeks.",
   },
 ];
+export type ProgramGroup = {
+  caption: string;
+  items: { program: string; curriculum: string; body: string }[];
+};
+export const programs = {
+  lede: "Cloud agents are not only for people whose job title is software engineer. The work below is drawn from the NPS program menu, grouped by how directly a cloud agent applies. Every example is a use of Devin as it exists today, not a claim about current NPS practice.",
+  groups: [
+    {
+      caption: "Software is the deliverable",
+      items: [
+        {
+          program: "Computer Science",
+          curriculum: "Curriculum 368",
+          body: "Thesis code, ML experiments, and secure-systems prototypes. Agents run experiment sweeps in parallel across separate machines, so a thesis is bounded by how fast results can be interpreted rather than how fast code can be typed.",
+        },
+        {
+          program: "MS in Applied Cyber Ops",
+          curriculum: "Curriculum 326",
+          body: "Tooling for lab ranges, parsers, and test harnesses. Triage at repository scale is the Itaú pattern in the case studies above: an agent reads the finding, writes the patch, and opens the PR for review.",
+        },
+        {
+          program: "Information Systems & Technology",
+          curriculum: "Curriculum 370",
+          body: "Modernization of the systems the program studies. Legacy migration and ETL rework are the two case studies with the largest numbers attached, and both are the kind of high-volume, well-specified work that an agent fleet absorbs.",
+        },
+        {
+          program: "Information Warfare",
+          curriculum: "Curriculum 595",
+          body: "Signal and data-processing code, plus the glue between simulation and analysis. Work in the information environment usually means moving data between tools that were never designed to talk to each other.",
+        },
+        {
+          program: "Electronic Systems Engineering",
+          curriculum: "Curriculum 590",
+          body: "Radar and communications projects that reach real hardware. The de-identified case study above is exactly this shape: HDL, synthesis scripts, and overnight debug loops against a physical dev kit.",
+        },
+        {
+          program: "Modeling Virtual Environments and Simulation",
+          curriculum: "Curriculum 399",
+          body: "Scenario code, instrumentation, and the interfaces between simulations and C2 systems. Agents can also generate the test coverage that keeps a simulation trustworthy as it grows.",
+        },
+      ],
+    },
+    {
+      caption: "Code is the instrument, not the product",
+      items: [
+        {
+          program: "Operations Research",
+          curriculum: "Curriculum 360",
+          body: "Optimization models, statistical pipelines, and course-of-action comparisons. An agent writes the model and cleans the data; parallel runs mean many formulations get tested instead of the one there was time for.",
+        },
+        {
+          program: "Defense Systems Analysis",
+          curriculum: "Curriculum 817",
+          body: "Cost estimation and decision analysis, including the unglamorous data preparation that consumes most of the schedule.",
+        },
+        {
+          program: "Manpower Systems Analysis",
+          curriculum: "Curriculum 847",
+          body: "Forecasting and force-structure models, rebuilt and re-run as assumptions change.",
+        },
+        {
+          program: "Financial Management",
+          curriculum: "Curriculum 837",
+          body: "Budget models and audit-quality reconciliation across large data sets.",
+        },
+        {
+          program: "Materiel Logistics Support",
+          curriculum: "Curriculum 827",
+          body: "Inventory and transportation models, and the reporting built on top of them.",
+        },
+        {
+          program: "Applied Physics of Combat Systems",
+          curriculum: "Curriculum 533",
+          body: "Numerical modeling of weapons and sensor behavior, and the simulation code that supports it.",
+        },
+        {
+          program: "Space Systems Operations",
+          curriculum: "Curriculum 566",
+          body: "Orbital and spacecraft analysis code. Work in this program is often classified, which is why the deployment posture in the previous section matters more than any single feature.",
+        },
+      ],
+    },
+    {
+      caption: "The consumer of what agents produce",
+      items: [
+        {
+          program: "Defense Program Management",
+          curriculum: "Curriculum 816",
+          body: "Program offices are already receiving software written with agents. Knowing what a review-ready agent PR looks like, and what velocity is now reasonable to expect, changes how a schedule is judged.",
+        },
+        {
+          program: "Defense Contract Management",
+          curriculum: "Curriculum 815",
+          body: "Contract language and evaluation criteria have not caught up to agent-assisted delivery. Cost and schedule assumptions built on human-only throughput are the first thing to revisit.",
+        },
+        {
+          program: "Applied Design for Innovation",
+          curriculum: "Curriculum 697",
+          body: "Design work depends on prototypes being cheap enough to throw away. A prototype an agent builds overnight is cheap enough to abandon in the morning.",
+        },
+        {
+          program: "Special Operations and Irregular Warfare",
+          curriculum: "Curriculum 699",
+          body: "Small teams that need a tool now, built by whoever has the problem rather than whoever has the language.",
+        },
+        {
+          program: "Regional Security Studies and Regional Security Studies Certificates",
+          curriculum: "Curricula 681 to 684, 246 to 249",
+          body: "The least direct fit, and still real: document processing at volume, repeatable data collection, and small internal tools that would otherwise be a spreadsheet maintained by hand.",
+        },
+      ],
+    },
+  ] satisfies ProgramGroup[],
+};
+export type DemoStep = {
+  number: string;
+  title: string;
+  target: string;
+  minutes: number;
+  prompt: string;
+  watchFor: string;
+  whyItMatters: string;
+};
+export const demo = {
+  lede: "The live portion runs against one repository: NPS-training/Labtainers-Devin, a Docker-based framework of 89 cybersecurity lab exercises written in Python, Bash, Java, and C++. Nobody in the room wrote it, which is the point. Pick a step, read the prompt, and watch what comes back.",
+  repository: "NPS-training/Labtainers-Devin",
+  budget: "About 25 minutes, after 15 on this site.",
+  steps: [
+    {
+      number: "01",
+      title: "Ask a codebase you have never seen",
+      target: "Devin Wiki",
+      minutes: 4,
+      prompt:
+        "I have never seen this repository before. Give me a high-level summary of what it does, how a single lab is defined, and how student work gets graded.",
+      watchFor:
+        "The wiki already exists. It was generated by adding the repository, with no setup and no one writing documentation. The answer arrives with an architecture diagram and citations that link into real files.",
+      whyItMatters:
+        "This is the first hour of every new assignment, every new billet, and every code base inherited from a contractor.",
+    },
+    {
+      number: "02",
+      title: "Trace one mechanism end to end",
+      target: "Devin Wiki",
+      minutes: 4,
+      prompt:
+        "How does this framework stop two students from submitting identical work? Walk me through the files involved and the order they run in.",
+      watchFor:
+        "It follows the chain rather than guessing: LAB_MASTER_SEED in a lab's config/start.config, the RAND_REPLACE and HASH_REPLACE operators in config/parameter.config, and the per-student seed derived from an email address. Ask a follow-up question and it stays on the thread.",
+      whyItMatters:
+        "Reading a mechanism out of an unfamiliar code base is the part of the work that does not compress by adding people.",
+    },
+    {
+      number: "03",
+      title: "Scan for vulnerabilities, then fix them",
+      target: "Devin security review",
+      minutes: 5,
+      prompt: "Run a security review of this repository and rank what you find by severity.",
+      watchFor:
+        "Findings grouped by severity, with the critical ones first. Turning on auto-fix sends Devin back into the code to open pull requests against the findings. A person still reviews and merges every one.",
+      whyItMatters:
+        "A backlog of known-but-unfixed findings is normal, and it exists because triage and remediation cost engineer hours, not because the findings are unknown.",
+    },
+    {
+      number: "04",
+      title: "Put a pull request through review",
+      target: "Devin code review",
+      minutes: 3,
+      prompt: "Review this pull request and flag anything that would break an existing lab.",
+      watchFor:
+        "This is a separate system from the security scan. It reads the diff in the context of the whole repository and comments inline, in the same place a human reviewer would.",
+      whyItMatters:
+        "Review is the bottleneck that appears the moment code generation stops being the bottleneck.",
+    },
+    {
+      number: "05",
+      title: "Delegate real work and watch the machine",
+      target: "A Devin session",
+      minutes: 5,
+      prompt:
+        "tool-src/capinout captures a student's terminal input and output through a PTY. Add a regression test proving output is still captured when the lab command exits with a non-zero status.",
+      watchFor:
+        "The session view shows the VM: a shell, an editor, a browser, a plan that updates as the work proceeds. It compiles the C++ utility, runs it, and reads the failure itself. The output is a pull request, not a suggestion in a chat window.",
+      whyItMatters:
+        "Everything in that window is work that a local assistant hands back to you: building, running, reading the error, trying again.",
+    },
+    {
+      number: "06",
+      title: "Fan the same task across the whole repository",
+      target: "Parallel sessions",
+      minutes: 4,
+      prompt:
+        "For every lab under labs/, check that config/start.config declares a network for each container it defines. Open one pull request per lab that is missing one.",
+      watchFor:
+        "Many sessions running at once in the sessions list, each on its own machine, filtered and pinned as they finish. The shape is map then reduce: parallel workers on identical narrow tasks, with the results collected for one review pass.",
+      whyItMatters:
+        "Eighty-nine labs is small enough to be tedious and large enough that nobody volunteers. This is the class of work that never gets scheduled.",
+    },
+  ] satisfies DemoStep[],
+  closing: "The passphrase for this site is shared with the room.",
+};
 export const gettingStarted = [
   {
     tier: "Easy",

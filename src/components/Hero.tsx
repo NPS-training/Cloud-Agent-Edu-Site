@@ -3,7 +3,7 @@ export function Hero() {
     <section className="hero">
       <div className="wrap hero-grid">
         <div>
-          <div className="eyebrow">A briefing for engineers · 2026</div>
+          <div className="eyebrow">NPS Briefing · 2026</div>
           <h1 className="display">
             Cloud-Based
             <br />

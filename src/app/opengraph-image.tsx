@@ -19,7 +19,7 @@ export default function OpenGraphImage() {
       }}
     >
       <div style={{ color: "#6F9FE8", fontSize: 24, letterSpacing: 4, textTransform: "uppercase" }}>
-        A briefing for engineers · 2026
+        NPS Briefing · 2026
       </div>
       <div style={{ display: "flex", flexDirection: "column", marginTop: 28 }}>
         <div style={{ fontSize: 84, fontWeight: 700, lineHeight: 1, letterSpacing: -5 }}>
