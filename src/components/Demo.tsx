@@ -74,8 +74,14 @@ export function Demo() {
               .slice(0, tierIndex)
               .reduce((total, item) => total + item.steps.length, 0);
             return (
-              <div className={`demo-tier demo-tier-${tierIndex + 1}`} key={tier.caption}>
-                <span className="demo-tier-caption">{tier.caption}</span>
+              <div
+                className={`demo-tier demo-tier-${tierIndex + 1}`}
+                key={tier.caption}
+                role="presentation"
+              >
+                <span className="demo-tier-caption" role="presentation">
+                  {tier.caption}
+                </span>
                 {tier.steps.map((step, index) => {
                   const stepIndex = offset + index;
                   return (
