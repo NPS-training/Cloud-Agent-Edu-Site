@@ -4,7 +4,7 @@ export function Meta() {
     <section id="meta" className="section meta">
       <div className="wrap">
         <div className="rule section-head">
-          <span className="eyebrow">14 · The meta moment</span>
+          <span className="eyebrow">15 · The meta moment</span>
         </div>
         <h2 className="title">{metaCopy[0]}</h2>
         <p className="lede">{metaCopy[1]}</p>

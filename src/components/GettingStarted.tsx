@@ -4,7 +4,7 @@ export function GettingStarted() {
   return (
     <Section
       id="start"
-      number="12"
+      number="13"
       kicker="Where to start"
       title="Start with work that should never block a human."
     >

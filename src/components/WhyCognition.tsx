@@ -4,7 +4,7 @@ export function WhyCognition() {
   return (
     <Section
       id="why"
-      number="13"
+      number="14"
       kicker="Why Cognition"
       title="An execution architecture for the age of agent fleets."
     >
